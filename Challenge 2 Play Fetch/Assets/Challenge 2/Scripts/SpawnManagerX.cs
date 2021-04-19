@@ -28,6 +28,8 @@ public class SpawnManagerX : MonoBehaviour
 
         if (timer > spawnTimeInterval)
         {
+           
+          
             SpawnRandomBall();
 
             spawnTimeInterval = Random.Range(minTime, maxTime);
