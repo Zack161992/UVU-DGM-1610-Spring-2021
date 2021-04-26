@@ -13,20 +13,19 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemyWave(waveNumber);
-        Instantiate(powerupPerfab, GenerateSpawnPosition(), powerupPerfab.transform.rotation);
+        SpawnEnemyWave(waveNumber); 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        enemyCount = FindObjectsOfType<Enemy>().Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("Ball").Length;
 
         if(enemyCount == 0)
         {
             waveNumber++;
-            SpawnEnemyWave(waveNumber);
-            Instantiate(powerupPerfab, GenerateSpawnPosition(), powerupPerfab.transform.rotation);
+            SpawnWave(waveCount);
         }
     }
 
